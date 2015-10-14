@@ -1,0 +1,29 @@
+#Decor, #Decor ul {
+	list-style-type: none;
+	margin-left:15px;
+	margin-bottom:5px;
+	padding-left:20px;
+    cursor:pointer;
+}
+
+.icon { 
+	background: 
+        transparent 
+        url('../images/plus-minus.png' )
+        no-repeat left top; 
+	display:block; 
+    height:12px;
+    width:12px; 
+	float:left;
+    cursor:pointer;
+}
+
+.plus { 
+    background-position: left top; 
+    margin-top:3px;
+}
+
+.minus { 
+    background-position: left -10px;
+    margin-top:3px;
+}

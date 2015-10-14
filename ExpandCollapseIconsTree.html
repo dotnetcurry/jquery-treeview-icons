@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="CSS/expandcollapse.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script>
+	$(function () {
+            $('#Decor ul')
+                .hide(400)
+                .parent()
+                .prepend('<span class="icon plus"></span>');
+
+            $('#Decor li').on('click', function (e) {
+                e.stopPropagation();
+                $(this).children('ul').slideToggle('slow', function () {
+                    if ($(e.target).is("span")) {
+                        $(e.target)
+                            .toggleClass('minus', $(this).is(':visible'));                        
+                    }
+                    else {
+                        $(e.target).children('span')
+                            .toggleClass('minus', $(this).is(':visible'));                        
+                    }
+                });
+            });
+
+            $('#Decor a').not('[href="#"]').attr('target', '_blank');
+        });
+    </script>
+</head>
+<body>
+    <ul id="Decor">
+        <li class="level1">Home Decor
+	        <ul>
+                <li class="level2">Bedroom
+		            <ul>
+                        <li><a href="http://www.google.com">Bed Linen</a></li>
+                        <li><a href="#">Curtains</a></li>
+                    </ul>
+                </li>
+                <li class="level2">Dining
+		            <ul>
+                        <li><a href="#">Table Linens</a></li>
+                        <li><a href="#">Dinner Ware</a></li>
+                    </ul>
+                </li>
+                <li class="level2">Wall
+		            <ul>
+                        <li><a href="http://www.google.com">Picture Frames</a></li>
+                        <li><a href="#">Wall Sculptures</a></li>
+                        <li><a href="#">Tapestries</a></li>
+                    </ul>
+                </li>
+                <li class="level2">Furniture
+		            <ul>
+                        <li class="level3">Table & Chairs
+			            <ul>
+                            <li><a href="#">Teak Wood</a></li>
+                            <li><a href="#">Aluminium</a></li>
+                        </ul>
+                        </li>
+                        <li class="level3">Sofas
+			            <ul>
+                            <li><a href="#">Fabric</a></li>
+                            <li><a href="#">Leather</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="level1">Lights
+	        <ul>
+                <li><a href="#">Chandelier</a></li>
+                <li><a href="#">Ceiling</a></li>
+                <li><a href="#">Table</a></li>
+            </ul>
+        </li>
+        <li class="level1">Storage
+	        <ul>
+                <li><a href="#">Wall Mounted</a></li>
+                <li><a href="#">Floor Storage</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
